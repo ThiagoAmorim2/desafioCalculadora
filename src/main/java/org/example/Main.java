@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.model.CalculadoraAreasGeometricas;
 import org.example.model.CalculadoraIMC;
 import org.example.model.CalculadoraPadrao;
 
@@ -139,7 +140,71 @@ public class Main {
             }
 
         }
+            while (opcao == 3) {
+                System.out.println("------------------------------------");
+                System.out.println("--CALCULADORA-DE-ÁREAS-GEOMÉTRICAS--");
+                System.out.println("------------------------------------");
+                System.out.println("A área de qual figura geométrica você deseja calcular? ");
+                System.out.println("1 - Círculo");
+                System.out.println("2 - Quadrado");
+                System.out.println("3 - Retângulo");
+                System.out.println("4 - Sair");
+                System.out.println("\n");
+                Integer opcaoFigura = sc.nextInt();
 
+                while (opcaoFigura == 1) {
+                    System.out.println("Informe o raio do círculo ");
+                    Double termo1 = sc.nextDouble();
+                    CalculadoraAreasGeometricas calculadoraAreasGeometricas = new CalculadoraAreasGeometricas();
+                    System.out.println("A área do círculo de raio " + termo1 + " é " + calculadoraAreasGeometricas.areaCirculo(termo1));
+                    System.out.println("\n");
+                    System.out.println("Deseja realizar outro cálculo de círculo? \n");
+                    System.out.println("1 - SIM ou 2 - NÃO");
+                    Integer naoRebootCirculo = sc.nextInt();
+                    if (naoRebootCirculo == 2) {
+                        opcaoFigura = 0;
+                    } else {
+                        opcaoFigura = 1;
+                    }
+                }
+                while (opcaoFigura == 2) {
+                    System.out.println("Informe o lado do quadrado ");
+                    Double termo1 = sc.nextDouble();
+                    CalculadoraAreasGeometricas calculadoraAreasGeometricas = new CalculadoraAreasGeometricas();
+                    System.out.println("A área do quadrado de lado " + termo1 + " é " + calculadoraAreasGeometricas.areaQuadrado(termo1));
+                    System.out.println("\n");
+                    System.out.println("Deseja realizar outro cálculo de quadrado? \n");
+                    System.out.println("1 - SIM ou 2 - NÃO");
+                    Integer naoRebootQuadrado = sc.nextInt();
+                    if (naoRebootQuadrado == 2) {
+                        opcaoFigura = 0;
+                    } else {
+                        opcaoFigura = 2;
+                    }
+                }
+                while (opcaoFigura == 3) {
+                    System.out.println("Informe a base do retângulo ");
+                    Double termo1 = sc.nextDouble();
+                    System.out.println("Informe a altura do retângulo ");
+                    Double termo2 = sc.nextDouble();
+                    CalculadoraAreasGeometricas calculadoraAreasGeometricas = new CalculadoraAreasGeometricas();
+                    System.out.println("A área do retângulo de base "
+                                        + termo1 + " e altura " + termo2 +
+                                        " é " + calculadoraAreasGeometricas.areaRetangulo(termo1, termo2));
+                    System.out.println("\n");
+                    System.out.println("Deseja realizar outro cálculo de retângulo? \n");
+                    System.out.println("1 - SIM ou 2 - NÃO");
+                    Integer naoRebootQuadrado = sc.nextInt();
+                    if (naoRebootQuadrado == 2) {
+                        opcaoFigura = 0;
+                    } else {
+                        opcaoFigura = 3;
+                    }
+                }
+                if(opcaoFigura == 4){
+                    opcao = 0;
+                }
+            }
         }
     }
 }
