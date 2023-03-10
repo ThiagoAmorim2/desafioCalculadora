@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.model.CalculadoraIMC;
 import org.example.model.CalculadoraPadrao;
 
 import java.util.Scanner;
@@ -115,10 +116,30 @@ public class Main {
                         opcao=0;
                         retornocalculadoraPadrao=0;
                     }
-
-
                 }
             }
+        while (opcao == 2){
+            System.out.println("------------------------------------");
+            System.out.println("----------CALCULADORA-IMC-----------");
+            System.out.println("------------------------------------");
+            System.out.println("Por favor informe sua altura: ");
+
+            Double altura = sc.nextDouble();
+            System.out.println("Por favor informe seu peso: ");
+            Double peso = sc.nextDouble();
+            CalculadoraIMC calculadoraIMC = new CalculadoraIMC(altura, peso);
+            System.out.println("Seu IMC é: " + calculadoraIMC.calculaIMC(altura, peso));
+            System.out.println("Deseja realizar outro cálculo de IMC? \n");
+            System.out.println("1 - SIM ou 2 - NÃO");
+            Integer naoRebootIMC = sc.nextInt();
+            if(naoRebootIMC == 2){
+                opcao = 0;
+            }else{
+                opcao = 2;
+            }
+
+        }
+
         }
     }
 }
