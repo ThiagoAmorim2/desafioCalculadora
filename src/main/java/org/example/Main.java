@@ -115,7 +115,6 @@ public class Main {
                         calcularNovamente = 2;
                         opcao=0;
                         retornocalculadoraPadrao=0;
-                        sc.close();
                     }
                 }
             }
@@ -125,25 +124,20 @@ public class Main {
             System.out.println("------------------------------------");
             System.out.println("Por favor informe sua altura: ");
 
-            //Primeira Ideia
             Double altura = sc.nextDouble();
             System.out.println("Por favor informe seu peso: ");
             Double peso = sc.nextDouble();
             CalculadoraIMC calculadoraIMC = new CalculadoraIMC(altura, peso);
             System.out.println("Seu IMC é: " + calculadoraIMC.calculaIMC(altura, peso));
+            System.out.println("Deseja realizar outro cálculo de IMC? \n");
+            System.out.println("1 - SIM ou 2 - NÃO");
+            Integer naoRebootIMC = sc.nextInt();
+            if(naoRebootIMC == 2){
+                opcao = 0;
+            }else{
+                opcao = 2;
+            }
 
-            //Possível solição que não deu certo
-//            String altura = sc.nextLine();
-//            altura = altura.replace(',', '.');
-//            Double alturaDouble = Double.parseDouble(altura);
-////            System.out.println("\n");
-//            System.out.println("Por favor informe seu peso: ");
-//            String peso = sc.nextLine();
-//            peso = peso.replace(',', '.');
-//            Double pesoDouble = Double.parseDouble(peso);
-//
-//            CalculadoraIMC calculadoraIMC = new CalculadoraIMC(alturaDouble, pesoDouble);
-//            System.out.println("Seu IMC é: " + calculadoraIMC.calculaIMC(alturaDouble, pesoDouble));
         }
 
         }
